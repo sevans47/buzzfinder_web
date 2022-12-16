@@ -8,4 +8,4 @@ N_FFT=2048
 SERVICE_URL = "https://buzzfinder-classifier-v2-mnvqg6klaa-uc.a.run.app"
 
 if __name__ == "__main__":
-    print(ROOT_DIR)
+    print(SERVICE_URL)

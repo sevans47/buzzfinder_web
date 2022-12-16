@@ -1,2 +1,2 @@
-st_run:
+streamlit_run:
 	@streamlit run 🎸_buzzfinder.py

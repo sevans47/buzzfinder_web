@@ -66,7 +66,7 @@ st.header("An API for identifying buzzy notes when playing guitar")
 with st.expander('Information'):
 
     st.markdown("**Background**")
-    st.write("""The BuzzFinder API is able to identify whether a note played on guitar has a clean, buzzy, or muted tone. For
+    st.write("""The buzzfinder API uses a CNN model to identify whether a note played on guitar has a clean, buzzy, or muted tone. For
              the fretting hand (ie the hand whose fingers push down on the strings), these three tones correspond to
              three levels of pressure :
     """)
@@ -77,20 +77,21 @@ with st.expander('Information'):
                 - muted: pushing down just a little so that the finger is dampening the string's vibration, but the string isn't touching the fret
     """)
     st.write("""Of these three tones, a buzzy tone is universally hated.  When practicing, it's essential to identify
-             buzzy notes, diagnose their cause, and eradicate them.  The BuzzFinder aims to help guitarists in this endeavor.
+             buzzy notes, diagnose their cause, and eradicate them.  The buzzfinder aims to help guitarists in this endeavor.
     """)
 
     st.markdown("**Libraries used**")
     st.markdown("""
                 - **Librosa**, **Numpy**, and **Audiomentations**: creating the dataset
                 - **Tensorflow Keras**: training the model
-                - **BentoML**: making the API
-                - **Docker and GCP**: deploying the API
+                - **MLFlow**: saving models and tracking results
+                - **BentoML**: serve model over an HTTP API endpoint and create a docker container
+                - **Google Cloud Platform (GCP)**: deploying the API using Container Registry and Cloud Run
                 - **Streamlit**: building the API demo website
     """)
 
     st.markdown("**Data**")
-    st.write("""I created the dataset used to train the BuzzFinder model by recording myself playing single notes up and down my guitar.  I then used Librosa's
+    st.write("""I created the dataset used to train the buzzfinder model by recording myself playing single notes up and down my guitar.  I then used Librosa's
              onset detection function to automatically locate where in the recording I played notes, and made two second clips from
              those instances.  I then extracted the comprehensive MFCCs from the audio clips, which is an audio feature
              that's very good at describing the tone of a sound while ignoring pitch.  As I only wanted to identify the guitar's tone,
@@ -118,7 +119,7 @@ with st.expander('Information'):
     # """)
 
     st.markdown("**Possible uses**")
-    st.write("""I see two main use cases for the BuzzFinder API:""")
+    st.write("""I see two main use cases for the buzzfinder API:""")
     st.markdown("""
              - *Identify all the buzzy or muted notes in a recording.*
              This would help a guitarist to more quickly locate trouble spots, and help bring awareness to their playing.
