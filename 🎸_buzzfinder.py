@@ -17,7 +17,7 @@ NUM_TOTAL_CLIPS = 2651
 TONES = ["buzzy 😬", "clean ✨", "muted 🔇"]
 
 def get_random_audio_clip():
-    audio_path = os.path.join(ROOT_DIR, "data", "audio_clips")
+    audio_path = os.path.join(ROOT_DIR, "audio_clips")
     random_file = random.choice(os.listdir(audio_path))
     if "buzzy" in random_file:
         tone = TONES[0]
